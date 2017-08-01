@@ -50,6 +50,16 @@ h2 {
 	font-size:1.6em;
 	margin:0.5em 0 0.5em 0;
 }
+
+footer {
+	margin:2em 0 0 0;
+	padding:0;
+	font-size:0.6em;
+	background-color:silver;
+	color:gray;
+}
+footer .right { text-align:right; padding:0;}
+footer .left { text-align:left; padding:0;}
 </style>
 
 <!-- Get User IP -->
@@ -63,24 +73,38 @@ h2 {
 <script src="navbar-fixed-top.js"></script>
 
 <script>
-var Menu = new Array('a', 'b', 'c');
-fixed_top_navbar("", "Menu", "");
+	fixed_top_navbar("", "", "More");
 </script>
 
-<section class="container"><h1>Custom Navbar</h1>
-	
-	<article><h2>Instructions</h2>
+<main class="container"><h1>Custom Navbar</h1>
 
+	<header>
+		<h2>A completely customizable top nav bar powered by bootstrap</h2>
+	</header>
+	
+	<article><h3>Instructions:  Just two steps to use this on your site or blog...</h3>
+		<section><h4>1. Load JavaScript file</h4>
+			<pre><code>&lt;script src="navbar-fixed-top.js"&gt;&lt;/script&gt;</code></pre>
+		</section>
+		<section><h4>2. Customize Menu</h4>
+			Default settings: <pre><code>&lt;script&gt;fixed_top_navbar("","","More");&lt;/script&gt;</code></pre>
+		</section>
 	</article>
 	
 	<footer>
-		<script type="text/javascript">
-			document.write('Your IP is ' +user_ip+ ' ');
-		</script>
+		
+		<div class="col-sm-4 left">
+			Rights &copy; <script> document.write('<b>' +srv[ srvTotal - 2]+ '</b>'); </script> 
+		</div>
+		
+		<div class="col-sm-8 right">
+			<script type="text/javascript">
+				document.write('Your IP is ' +user_ip+ ' ');
+			</script>
+		</div>
 	</footer>
 	
-</section><!--end container-->
-
+</main><!--end container-->
 
 
 <!--jquery-->

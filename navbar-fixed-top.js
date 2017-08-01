@@ -1,16 +1,18 @@
-//<!-- no jq methods 
-
-function fixed_top_navbar(serverName, pageName, menuName, dropDownLinks, searchUrl) {
+//<!-- 
 
 var server = window.location.hostname;
 var srv = server.split('.');
 var srvTotal = srv.length;
-// usage: fixed_top_navbar('', '', 'Menu', 'm-=-mobile', 'google');
-// First two will be filled in automatically by serverName and pageName respectively (localhost, first item after the first /)
 
 var path = window.location.pathname;
 var paths = path.split('/');
 var pathsTotal = path.length;
+
+function fixed_top_navbar(serverName, pageName, menuName, dropDownLinks, searchUrl) {
+
+// usage: fixed_top_navbar('', '', 'Menu', 'm-=-mobile', 'google');
+// First two will be filled in automatically by serverName and pageName respectively (localhost, first item after the first /)
+
 			
 	// serverName
 	if ( serverName === undefined || serverName === '' ) {
@@ -34,8 +36,10 @@ var pathsTotal = path.length;
 			pageName = 'Home';		// Wed Feb  4 22:27:44 2015
 			
 		} else {
-			pageName = paths[1];
-			pageLink += paths[1];
+			//pageName = paths[2];
+			//pageLink = '/' +paths[1]+ '/' +paths[2];
+			var pageTitle = document.title; 
+			pageName = '<a href="' +path+ '" title="' +pageTitle+ '">' +pageTitle+ '</a>';
 		}
 	} else if ( Array.isArray( pageName ) )  {
 		var  pageNameOut = '<ul class="dropdown-menu" role="menu" id="170317"><li><a href="#">#</a></li>';
